@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111411">
+    <title>Mythic Studio — World Simulator</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="wordmark" href="./"><span class="sigil" aria-hidden="true">M</span> MYTHIC <span class="muted">STUDIO</span></a>
+        <span class="top-label"><i class="dot"></i> WORLD SIMULATOR <span class="badge">ALPHA 01</span></span>
+      </header>
+      <section class="intro">
+        <p class="eyebrow">A LIVING WORLD, ONE TURN AT A TIME</p>
+        <h1>The world remembers.</h1>
+        <p>Watch old stories move through Westreach. Every turn follows the world's rules, and every consequence stays in its history.</p>
+      </section>
+      <section class="toolbar" aria-label="Simulation controls">
+        <div class="tick"><span class="eyebrow">CURRENT TICK</span><strong id="tick-value">000</strong></div>
+        <div class="controls">
+          <label class="seed"><span class="eyebrow">WORLD SEED</span><input id="seed-input" value="westreach-01" aria-label="World seed"></label>
+          <button class="button secondary" id="reset-button" type="button">Reset world</button>
+          <button class="button primary" id="advance-button" type="button">▶ &nbsp;Advance turn</button>
+        </div>
+      </section>
+      <div class="dashboard">
+        <section class="panel world-panel" aria-labelledby="world-heading">
+          <div class="panel-heading"><div><p class="eyebrow">THE KNOWN WORLD</p><h2 id="world-heading">Realms</h2></div><span class="status"><i class="dot"></i> SIMULATING</span></div>
+          <div id="realm-list" class="realm-list"></div>
+          <div class="divider"></div>
+          <div class="panel-heading small-heading"><div><p class="eyebrow">THE STORIES BENEATH</p><h2>Mythos threads</h2></div></div>
+          <div id="mythos-list" class="mythos-list"></div>
+        </section>
+        <section class="panel history-panel" aria-labelledby="history-heading">
+          <div class="panel-heading"><div><p class="eyebrow">A RECORD OF CONSEQUENCE</p><h2 id="history-heading">World history</h2></div><span id="history-count" class="count">0 ENTRIES</span></div>
+          <div id="history-list" class="history-list" aria-live="polite"></div>
+          <div id="empty-state" class="empty visible"><span aria-hidden="true">✳</span><p>No events yet.</p><small>Advance the world to discover what stirs.</small></div>
+        </section>
+        <aside class="panel player-panel" aria-labelledby="player-heading">
+          <div class="panel-heading"><div><p class="eyebrow">THE WITNESS</p><h2 id="player-heading">Your presence</h2></div><span class="player-sigil">✧</span></div>
+          <label class="field"><span class="eyebrow">GLYPH</span><select id="glyph-input"><option value="weave">Weave</option><option value="ember">Ember</option><option value="stillness">Stillness</option></select></label>
+          <label class="field"><span class="eyebrow">CLIMATE</span><select id="climate-input"><option value="grief">Grief</option><option value="wonder">Wonder</option><option value="rage">Rage</option></select></label>
+          <label class="field"><span class="eyebrow">ASCENSION</span><select id="ascension-input"><option value="crest">Crest</option><option value="dawn">Dawn</option><option value="radiance">Radiance</option></select></label>
+          <label class="field"><span class="eyebrow">REVELATION</span><select id="revelation-input"><option value="medium">Medium</option><option value="low">Low</option><option value="high">High</option></select></label>
+          <label class="presence"><span><span class="eyebrow">PRESENT IN WESTREACH</span><small>Events can sense your presence</small></span><input id="presence-input" type="checkbox" checked><span class="toggle" aria-hidden="true"></span></label>
+          <div class="note"><span>✦</span><span>Your choices shape which stories can reach you.</span></div>
+        </aside>
+      </div>
+      <footer><span>MYTHIC STUDIO <span class="muted">/</span> WORLD SIMULATOR</span><span>WESTREACH <span class="muted">·</span> THREAD: ECHO SPLIT</span></footer>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
